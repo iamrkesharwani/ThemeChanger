@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Theme Switcher</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Bootstrap Icons CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+  </head>
+
+  <body class="min-h-screen p-6 light-theme">
+    <!-- Toast notification for theme changes -->
+    <div id="notification">
+      <p class="font-semibold text-sm" id="notificationText">Theme changed!</p>
+    </div>
+
+    <div class="max-w-6xl mx-auto">
+      <!-- Header with quick toggle -->
+      <header class="card rounded-2xl p-8 mt-8 mb-6 border-2 fade-in">
+        <div class="flex justify-between items-center">
+          <div>
+            <h1 class="text-4xl font-bold">Theme Switcher</h1>
+          </div>
+
+          <!-- Quick light/dark toggle -->
+          <div class="flex items-center gap-4" id="quickToggle">
+            <div>
+              <p class="text-sm text-center mb-2">Switch Dark / Light</p>
+              <div class="toggle-switch" id="quickToggleBall"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Theme selection section -->
+      <section
+        class="card rounded-2xl p-8 mb-6 border-2 fade-in"
+        style="animation-delay: 0.1s"
+      >
+        <h2 class="text-2xl font-bold mb-6">Choose Your Theme</h2>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+
+          <!-- Light Theme -->
+          <button
+            class="theme-btn card-alt rounded-xl p-6 text-center"
+            data-theme="light"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-3 rounded-full bg-gradient-to-br from-yellow-100 to-yellow-300 flex items-center justify-center"
+            >
+              <i class="bi bi-brightness-high-fill text-3xl text-yellow-700"></i>
+            </div>
+            <p class="font-semibold">Light</p>
+            <p class="text-xs text-tertiary mt-1">Default</p>
+          </button>
+
+          <!-- Dark Theme -->
+          <button
+            class="theme-btn card-alt rounded-xl p-6 text-center"
+            data-theme="dark"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-3 rounded-full bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center"
+            >
+              <i class="bi bi-moon-stars-fill text-3xl text-slate-200"></i>
+            </div>
+            <p class="font-semibold">Dark</p>
+            <p class="text-xs text-tertiary mt-1">Classic</p>
+          </button>
+
+          <!-- Nature Theme -->
+          <button
+            class="theme-btn card-alt rounded-xl p-6 text-center"
+            data-theme="nature"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-3 rounded-full bg-gradient-to-br from-emerald-300 to-emerald-600 flex items-center justify-center"
+            >
+              <i class="bi bi-tree-fill text-3xl text-green-100"></i>
+            </div>
+            <p class="font-semibold">Nature</p>
+            <p class="text-xs text-tertiary mt-1">Fresh</p>
+          </button>
+
+          <!-- Sunset Theme -->
+          <button
+            class="theme-btn card-alt rounded-xl p-6 text-center"
+            data-theme="sunset"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-3 rounded-full bg-gradient-to-br from-amber-300 to-amber-600 flex items-center justify-center"
+            >
+              <i class="bi bi-clock-fill text-3xl text-yellow-200"></i>
+            </div>
+            <p class="font-semibold">Sunset</p>
+            <p class="text-xs text-tertiary mt-1">Warm</p>
+          </button>
+
+          <!-- Ocean Theme -->
+          <button
+            class="theme-btn card-alt rounded-xl p-6 text-center"
+            data-theme="ocean"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-3 rounded-full bg-gradient-to-br from-cyan-300 to-cyan-600 flex items-center justify-center"
+            >
+              <i class="bi bi-cloud-fill text-3xl text-white"></i>
+            </div>
+            <p class="font-semibold">Ocean</p>
+            <p class="text-xs text-tertiary mt-1">Cool</p>
+          </button>
+
+          <!-- Purple Theme -->
+          <button
+            class="theme-btn card-alt rounded-xl p-6 text-center"
+            data-theme="purple"
+          >
+            <div
+              class="w-16 h-16 mx-auto mb-3 rounded-full bg-gradient-to-br from-purple-400 to-purple-700 flex items-center justify-center"
+            >
+              <i class="bi bi-stars text-3xl text-white"></i>
+            </div>
+            <p class="font-semibold">Purple</p>
+            <p class="text-xs text-tertiary mt-1">Royal</p>
+          </button>
+        </div>
+
+        <!-- Keyboard shortcuts help section -->
+        <div class="mt-6 p-4 card-alt rounded-lg">
+          <p class="text-sm text-secondary flex items-center gap-2">
+            <i class="bi bi-info-circle-fill"></i>
+            <span>
+              <strong>Keyboard shortcuts:</strong> Press <kbd>1-6</kbd> to switch themes instantly,
+              or <kbd>T</kbd> to toggle light/dark
+            </span>
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
